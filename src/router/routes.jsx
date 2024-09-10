@@ -11,6 +11,7 @@ import Results from "../pages/Results"
 import Availability from "../pages/Availability"
 import Chat from "../pages/Chat"
 import MyCourses from "../pages/MyCourses"
+import Profile from "../pages/Profile"
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
       { path: "/availability", element: <Availability /> },
       { path: "/chat", element: <Chat /> },
       { path: "/mycourses", element: <MyCourses /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
 ]);

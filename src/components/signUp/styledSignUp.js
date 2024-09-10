@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: #F7EFB3;
   background-size: cover;
@@ -14,9 +14,9 @@ export const Container = styled.div`
 `;
 
 export const ArrowImg = styled.img`
-    position: absolute;
-  top: 20px; /* Ajustar según sea necesario */
-  left: 20px; /* Ajustar según sea necesario */
+  position: absolute;
+  top: 50px;
+  left: 20px;
   width: 24px;
   height: 24px;
 `;
@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-top: 80px; 
+  margin-top: 80px;
   transition: background-color 0.3s ease;
   font-family: "Rambla", sans-serif;
 `;
@@ -51,7 +51,7 @@ export const StyledInput = styled.input`
   border-radius: 5px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.8);
-    font-family: "Rambla", sans-serif;
+  font-family: "Rambla", sans-serif;
 `;
 
 export const Label = styled.label`
@@ -61,4 +61,27 @@ export const Label = styled.label`
   margin-bottom: 15px;
   font-family: "Rambla", sans-serif;
   margin-right: 275px;
+`;
+
+export const Label1 = styled(Label)`
+  margin-right: 310px;
+`;
+
+export const Label2 = styled(Label)`
+  margin-right: 210px;
+`;
+
+export const PasswordWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const IconImg = styled.img`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 `;

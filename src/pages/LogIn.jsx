@@ -12,7 +12,7 @@ import Arrow from "../assets/images/Arrow.png";
 const LogIn = () => {
   return (
     <Container>
-      <img src={Arrow} alt="Arrow" />
+      <ArrowImg src={Arrow} alt="Arrow" />
       <Title>LOG IN</Title>
       <Label>Email Here</Label>
 
@@ -25,6 +25,7 @@ const LogIn = () => {
   placeholder="***********"
 />
       <StyledButton>LOG IN</StyledButton>
+      <Label>Don’t have an Account? Sign Up here</Label>
     </Container>
   );
 };

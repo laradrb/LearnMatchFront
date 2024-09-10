@@ -8,6 +8,7 @@ import LogIn from "../pages/LogIn";
 import SignUp from "../pages/SignUp"
 import Filters from "../pages/Filters"
 import Results from "../pages/Results"
+import Availability from "../pages/Availability"
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: "/signup", element: <SignUp /> },
       { path: "/search", element: <Filters /> },
       { path: "/results", element: <Results /> },
+      { path: "/availability", element: <Availability /> },
     ],
   },
 ]);

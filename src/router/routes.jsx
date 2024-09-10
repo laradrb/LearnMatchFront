@@ -6,7 +6,7 @@ import About from "../pages/AboutLM"
 import About2 from "../pages/AboutLM2";
 import LogIn from "../pages/LogIn";
 import SignUp from "../pages/SignUp"
-
+import Filters from "../pages/Filters"
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
       { path: "/aboutLM2", element: <About2 /> },
       { path: "/login", element: <LogIn /> },
       { path: "/signup", element: <SignUp /> },
+      { path: "/search", element: <Filters /> },
     ],
   },
 ]);

@@ -14,9 +14,9 @@ export const Container = styled.div`
 `;
 
 export const ArrowImg = styled.img`
-    position: absolute;
-  top: 20px; /* Ajustar según sea necesario */
-  left: 20px; /* Ajustar según sea necesario */
+  position: absolute;
+  top: 50px;
+  left: 20px;
   width: 24px;
   height: 24px;
 `;
@@ -51,7 +51,7 @@ export const StyledInput = styled.input`
   border-radius: 5px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.8);
-    font-family: "Rambla", sans-serif;
+  font-family: "Rambla", sans-serif;
 `;
 
 export const Label = styled.label`
@@ -60,5 +60,23 @@ export const Label = styled.label`
   margin-top: 25px;
   margin-bottom: 15px;
   font-family: "Rambla", sans-serif;
+  margin-right: 310px;
+`;
+
+export const Label2 = styled(Label)`
   margin-right: 275px;
+`;
+
+export const Title2 = styled.h1`
+  color: #6C6C6C;
+  font-size: 14px;
+  font-family: "Rambla", sans-serif;
+  text-align: center;
+`;
+
+export const Title3 = styled.h1`
+  color: #007a8c;
+  font-size: 14px;
+  font-family: "Rambla", sans-serif;
+  text-align: center;
 `;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: space-around; 
   align-items: center; 
   padding: 20px; 
-  margin-left: 25px;
+  margin-left: 15px;
   margin-top: 40px;
 `;
 
@@ -25,6 +25,6 @@ export const Title = styled.h1`
 export const Logo = styled.img`
   width: 27px;
   height: 27px;
-  margin-left: 220px;
+  margin-left: 250px;
 `;
 

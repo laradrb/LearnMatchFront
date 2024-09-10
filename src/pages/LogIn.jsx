@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   ArrowImg,
@@ -13,9 +14,18 @@ import {
 import Arrow from "../assets/images/Arrow.png";
 
 const LogIn = () => {
+  const navigate = useNavigate(); 
+
+  const handleArrowClick = () => {
+    navigate("/"); 
+  };
   return (
     <Container>
-      <ArrowImg src={Arrow} alt="Arrow" />
+      <ArrowImg src={Arrow} 
+      alt="Arrow" 
+      onClick={handleArrowClick} 
+      style={{ cursor: 'pointer' }} 
+    />
       <Title>LOG IN</Title>
       <Label>Email</Label>
 

@@ -1,27 +1,18 @@
 import styled from "styled-components";
 
-
 export const Body = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  text-align: center;
+  justify-content: center;
+  min-height: 100vh; 
   background-color: #ffffff;
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-  margin: 0;
-
-  @media (max-width: 768px) {
-  }
 `;
 
-export const Logo = styled.img`
-  width: 80px;
-  height: 80px;
-  margin-top: 50px;
+export const MainLogo = styled.img`
+  width: 90%;
+  max-width: 500px;
+  margin-bottom: 100px
 `;
 
 

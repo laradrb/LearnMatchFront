@@ -1,4 +1,5 @@
 import React , {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
   ArrowImg,
@@ -15,6 +16,11 @@ import Arrow from "../assets/images/Arrow.png";
 import HiddenPassword from "../assets/images/HiddenPassword.svg";
 
 const SignUp = () => {
+  const navigate = useNavigate(); 
+
+  const handleArrowClick = () => {
+    navigate("/login"); 
+  };
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -28,7 +34,12 @@ const SignUp = () => {
 
   return (
     <Container>
-      <ArrowImg src={Arrow} alt="Arrow" />
+      <ArrowImg 
+      src={Arrow} 
+      alt="Arrow" 
+      onClick={handleArrowClick} 
+      style={{ cursor: 'pointer' }} 
+    />
       <Title>SIGN UP</Title>
 
       <Label>Full Name</Label>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title, Text, StyledButton } from "./styledAbout";
+import { Container, Title, Text, StyledButton2 } from "./styledAbout";
 import StudentAndTutor from "../../assets/images/StudentAndTutor.svg"; 
 import Circles2 from "../../assets/images/Circles2.svg"; 
 
@@ -16,7 +16,7 @@ const About2 = () => {
             <img
                 src={Circles2}
             />
-            <StyledButton>CONTINUE</StyledButton>
+            <StyledButton2>CONTINUE</StyledButton2>
         </Container>
     );
 };

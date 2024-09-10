@@ -9,6 +9,7 @@ import SignUp from "../pages/SignUp"
 import Filters from "../pages/Filters"
 import Results from "../pages/Results"
 import Availability from "../pages/Availability"
+import Chat from "../pages/Chat"
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
       { path: "/search", element: <Filters /> },
       { path: "/results", element: <Results /> },
       { path: "/availability", element: <Availability /> },
+      { path: "/chat", element: <Chat /> },
     ],
   },
 ]);

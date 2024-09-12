@@ -21,14 +21,24 @@ const Filters = () => {
     };
 
     const handleApplyFilters = () => {
-        const queryParams = new URLSearchParams({
-            course: selectedCourse,
-            level: selectedLevel,
-            time: selectedTime,
-            sessionTime: selectedSessionTime
-        }).toString();
-        navigate(`/results?${queryParams}`);
-    };
+      const previousCourse = localStorage.getItem('currentCourse');
+      const previousLevel = localStorage.getItem('currentLevel');
+  
+      localStorage.setItem('previousCourse', previousCourse || 'No Course Selected');
+      localStorage.setItem('previousLevel', previousLevel || 'No Level Selected');
+  
+      localStorage.setItem('currentCourse', selectedCourse);
+      localStorage.setItem('currentLevel', selectedLevel);
+  
+      const queryParams = new URLSearchParams({
+          course: selectedCourse,
+          level: selectedLevel,
+          time: selectedTime,
+          sessionTime: selectedSessionTime
+      }).toString();
+      
+      navigate(`/results?${queryParams}`);
+  };
 
     return (
         <>

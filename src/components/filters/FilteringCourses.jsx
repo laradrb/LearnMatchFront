@@ -18,7 +18,7 @@ const Filters = () => {
   const [levels, setLevels] = useState([]);
   const navigate = useNavigate();
 
-  // Fetch categories and levels from the API
+
   const { data: categoryData, loading: categoryLoading, error: categoryError } = useApi({
     apiEndpoint: "http://localhost:8000/api/v1/course/",
   });
@@ -29,10 +29,10 @@ const Filters = () => {
 
   useEffect(() => {
     if (categoryData) {
-      setCategories(categoryData); // Assuming the API returns an array of categories
+      setCategories(categoryData);
     }
     if (levelData) {
-      setLevels(levelData); // Assuming the API returns an array of levels
+      setLevels(levelData);
     }
   }, [categoryData, levelData]);
 
@@ -41,8 +41,6 @@ const Filters = () => {
   };
 
   const handleApplyFilters = () => {
-    // Implement filter application logic here
-    // For example, you can redirect with query parameters or make an API call
     navigate(`/results?time=${selectedButton}`);
   };
 

@@ -60,7 +60,7 @@ export const Label = styled.label`
   margin-top: 25px;
   margin-bottom: 15px;
   font-family: "Rambla", sans-serif;
-  margin-right: 310px;
+  margin-right: 270px;
 `;
 
 export const Label2 = styled(Label)`

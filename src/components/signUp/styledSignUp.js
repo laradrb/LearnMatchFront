@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: #F7EFB3;
   background-size: cover;
@@ -38,7 +38,7 @@ export const StyledButton = styled.button`
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-top: 80px; 
+  margin-top: 80px;
   transition: background-color 0.3s ease;
   font-family: "Rambla", sans-serif;
 `;
@@ -60,23 +60,28 @@ export const Label = styled.label`
   margin-top: 25px;
   margin-bottom: 15px;
   font-family: "Rambla", sans-serif;
+  margin-right: 275px;
+`;
+
+export const Label1 = styled(Label)`
   margin-right: 310px;
 `;
 
 export const Label2 = styled(Label)`
-  margin-right: 275px;
+  margin-right: 210px;
 `;
 
-export const Title2 = styled.h1`
-  color: #6C6C6C;
-  font-size: 14px;
-  font-family: "Rambla", sans-serif;
-  text-align: center;
+export const PasswordWrapper = styled.div`
+  position: relative;
+  width: 100%;
 `;
 
-export const Title3 = styled.h1`
-  color: #007a8c;
-  font-size: 14px;
-  font-family: "Rambla", sans-serif;
-  text-align: center;
+export const IconImg = styled.img`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 `;

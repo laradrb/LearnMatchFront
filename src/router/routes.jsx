@@ -7,6 +7,7 @@ import About2 from "../pages/AboutLM2";
 import LogIn from "../pages/LogIn";
 import SignUp from "../pages/SignUp"
 import Filters from "../pages/Filters"
+import Results from "../pages/Results"
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ export const router = createBrowserRouter([
       { path: "/login", element: <LogIn /> },
       { path: "/signup", element: <SignUp /> },
       { path: "/search", element: <Filters /> },
+      { path: "/results", element: <Results /> },
     ],
   },
 ]);

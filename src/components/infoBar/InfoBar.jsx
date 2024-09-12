@@ -16,8 +16,7 @@ const InfoBar = () => {
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const username = queryParams.get("username") || "User";
-
+    const username = localStorage.getItem("username") || "User";
   
     return (
       <Container>

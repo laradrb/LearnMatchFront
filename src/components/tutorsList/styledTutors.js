@@ -16,13 +16,35 @@ export const Title = styled.h1`
   margin-bottom: 40px;
 `;
 
-export const StyledInput = styled.input`
+export const StyledButtonInput = styled.input`
   width: 85%;
-  padding: 45px;
-  border: 1px solid #336749;
+  padding: 15px 20px;
+  border: 1px solid #007a8c;
   border-radius: 5px;
   font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
+  color: #6C6C6C;
+  text-align: center;
   font-family: "Rambla", sans-serif;
   margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #005f70;
+  }
+
+  &:active {
+    background-color: #004851;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #004851;
+  }
+
+  background-image: url(${(props) => props.icon});
+  background-size: 20px 20px;
+  background-position: 10px center;
+  background-repeat: no-repeat;
 `;

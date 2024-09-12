@@ -88,3 +88,11 @@ export const RecordButton = styled.button`
     background-color: ${(props) => (props.recording ? "#e64a19" : "#005f6a")};
   }
 `;
+
+export const Title = styled.h1`
+  color: #007a8c;
+  font-size: 50px;
+  font-family: "Rambla", sans-serif;
+  margin-top: 350px;
+  text-align: center;
+`;

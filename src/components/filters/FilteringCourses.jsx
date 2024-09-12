@@ -1,29 +1,81 @@
-import React, { useState } from "react";
-import { Body, Label, StyledSelect, StyledButtonContainer, StyledButton, StyledButtonContainer2, StyledButton2  } from "./styledFilters";
+import React, { useState, useEffect } from "react";
+import {
+  Body,
+  Label,
+  StyledSelect,
+  StyledButtonContainer,
+  StyledButton,
+  StyledButtonContainer2,
+  StyledButton3,
+  StyledButton2
+} from "./styledFilters";
+import { useNavigate } from "react-router-dom";
+import useApi from "../../services/useApi";
 
 const Filters = () => {
   const [selectedButton, setSelectedButton] = useState(null);
+  const [categories, setCategories] = useState([]);
+  const [levels, setLevels] = useState([]);
+  const navigate = useNavigate();
+
+  // Fetch categories and levels from the API
+  const { data: categoryData, loading: categoryLoading, error: categoryError } = useApi({
+    apiEndpoint: "http://localhost:8000/api/v1/course/",
+  });
+
+  const { data: levelData, loading: levelLoading, error: levelError } = useApi({
+    apiEndpoint: "http://localhost:8000/api/v1/level/",
+  });
+
+  useEffect(() => {
+    if (categoryData) {
+      setCategories(categoryData); // Assuming the API returns an array of categories
+    }
+    if (levelData) {
+      setLevels(levelData); // Assuming the API returns an array of levels
+    }
+  }, [categoryData, levelData]);
 
   const handleButtonClick = (value) => {
     setSelectedButton(value);
+  };
+
+  const handleApplyFilters = () => {
+    // Implement filter application logic here
+    // For example, you can redirect with query parameters or make an API call
+    navigate(`/results?time=${selectedButton}`);
   };
 
   return (
     <Body>
       <Label>Course Category</Label>
       <StyledSelect>
-        <option value="financial-accounting">Financial Accounting</option>
-        <option value="marketing-management">Marketing Management</option>
-        <option value="strategic-management">Strategic Management</option>
-        <option value="business-law">Business Law</option>
-        <option value="international-business">International Business</option>
+        {categoryLoading ? (
+          <option>Loading...</option>
+        ) : categoryError ? (
+          <option>Error loading categories</option>
+        ) : (
+          categories.map((category) => (
+            <option key={category.id} value={category.value}>
+              {category.name}
+            </option>
+          ))
+        )}
       </StyledSelect>
 
       <Label>Difficulty Level</Label>
       <StyledSelect>
-        <option value="beginner">Beginner</option>
-        <option value="standard">Standard</option>
-        <option value="advanced">Advanced</option>
+        {levelLoading ? (
+          <option>Loading...</option>
+        ) : levelError ? (
+          <option>Error loading levels</option>
+        ) : (
+          levels.map((level) => (
+            <option key={level.id} value={level.value}>
+              {level.name}
+            </option>
+          ))
+        )}
       </StyledSelect>
 
       <Label>How much time do you have for a session?</Label>
@@ -69,7 +121,7 @@ const Filters = () => {
           Any time
         </StyledButton3>
       </StyledButtonContainer2>
-      <StyledButton2>APPLY FILTERS</StyledButton2>
+      <StyledButton2 onClick={handleApplyFilters}>APPLY FILTERS</StyledButton2>
     </Body>
   );
 };

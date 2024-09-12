@@ -41,3 +41,16 @@ export const StyledButton = styled.button`
   font-family: "Rambla", sans-serif;
 `;
 
+export const StyledButton2 = styled.button`
+  width: 70%;
+  padding: 20px;
+  background-color: #007a8c;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 120px; 
+  transition: background-color 0.3s ease;
+  font-family: "Rambla", sans-serif;
+`;
+

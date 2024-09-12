@@ -14,6 +14,8 @@ export const Title = styled.h1`
   font-size: 20px;
   font-family: "Rambla", sans-serif;
   margin-bottom: 40px;
+  max-width: 80%;
+  text-align: center;
 `;
 
 export const StyledCalendar = styled.div`

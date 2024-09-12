@@ -39,35 +39,40 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
+        alert("Passwords do not match");
+        return;
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}register/`, {  
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: fullName,
-          email: email,
-          password: password,
-        }),
-      });
+        const response = await fetch(`${API_BASE_URL}register/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: fullName,
+                email: email,
+                password: password,
+            }),
+        });
 
-      if (response.ok) {
-        alert("User registered successfully!");
-        navigate("/login");
-      } else {
-        const errorData = await response.json();
-        alert("Error: " + errorData.message);
-      }
+        if (response.ok) {
+            const data = await response.json();
+            
+            localStorage.setItem('userFullName', fullName);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', password);
+            alert("User registered successfully!");
+            navigate("/login");
+        } else {
+            const errorData = await response.json();
+            alert("Error: " + errorData.message);
+        }
     } catch (error) {
-      console.error("Error during registration:", error);
-      alert("An error occurred. Please try again later.");
+        console.error("Error during registration:", error);
+        alert("An error occurred. Please try again later.");
     }
-  };
+};
 
   return (
     <Container>
@@ -79,7 +84,7 @@ const SignUp = () => {
       />
       <Title>SIGN UP</Title>
 
-      <Label>Full Name</Label>
+      <Label>Username</Label>
       <StyledInput
         placeholder="María García"
         value={fullName}

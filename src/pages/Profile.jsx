@@ -1,57 +1,77 @@
-import React , {useState} from "react";
+import React, { useState, useEffect } from "react";
 import {
+  Title1,
   Label,
   Label1,
+  Label2,
+  Label3,
   StyledInput,
   PasswordWrapper,
-} from "../components/signUp/styledSignUp";
+  StyledInput1,
+  Title2,
+  StyledButton2,
+} from "../styled/StyledProfile";
 import NavBar from "../components/navBar/NavBar"; 
 import InfoBar from "../components/infoBar/InfoBar";
-import { Body, Title } from "../components/tutorsList/styledTutors";
-import { StyledButton2 } from "../components/filters/styledFilters";
+import { Body } from "../components/tutorsList/styledTutors";
 
 const Profile = () => {
-    const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  useEffect(() => {
+    const storedFullName = localStorage.getItem('userFullName') || "";
+    const storedEmail = localStorage.getItem('userEmail') || "";
+    const storedPassword = localStorage.getItem('userPassword') || "";
+
+    setFullName(storedFullName);
+    setEmail(storedEmail);
+    setPassword(storedPassword);
+  }, []);
+
+
+  const handleSaveChanges = () => {
+    console.log("Changes saved");
   };
 
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
   return (
     <>
-    <InfoBar />
-    <Body>
-        <br></br>
-    <Title>Personal Info</Title>
-    
-<Label>Full Name</Label>
-<StyledInput placeholder="María García" />
+      <InfoBar />
+      <Body>
+        <Title1>Personal Info</Title1>
+        
+        <Label>Username</Label>
+        <StyledInput 
+          value={fullName} 
+          onChange={(e) => setFullName(e.target.value)} 
+        />
 
-<Label1>Email</Label1>
-<StyledInput placeholder="user@email.com" />
+        <Label1>Email</Label1>
+        <StyledInput 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        />
 
-<Label>Password</Label>
-<PasswordWrapper>
-  <StyledInput
-    type={showPassword ? "text" : "password"} 
-    placeholder="***********"
-  />
-</PasswordWrapper>
+        <Label>Password</Label>
+        <PasswordWrapper>
+          <StyledInput1
+            type={showPassword ? "text" : "password"} 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </PasswordWrapper>
 
-<Title>Your education</Title>
+        <Title2>Your Education</Title2>
+        <Label2>Degree</Label2>
+        <StyledInput placeholder="Business Administration" />
 
-<Label>Degree</Label>
-<StyledInput placeholder="Business Administration" />
-
-<Label1>University</Label1>
-<StyledInput placeholder="University of A Coruña" />
-    </Body>
-    <StyledButton2>SAVE CHANGES</StyledButton2>
-    <NavBar />
+        <Label3>University</Label3>
+        <StyledInput placeholder="University of A Coruña" />
+        <StyledButton2 onClick={handleSaveChanges}>SAVE CHANGES</StyledButton2>
+      </Body>
+      <NavBar />
     </>
   );
 };

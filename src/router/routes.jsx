@@ -18,6 +18,7 @@ export const router = createBrowserRouter([
       { path: "/aboutLM2", element: <About2 /> },
       { path: "/login", element: <LogIn /> },
       { path: "/signup", element: <SignUp /> },
+      { path: "/search",  },
     ],
   },
 ]);

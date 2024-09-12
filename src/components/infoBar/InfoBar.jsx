@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate, useLocation } from "react-router-dom"; 
 import { Container, Title, Logo } from "./styledInfoBar"; 
 import Bell from "../../assets/images/Bell.svg";
 
-const InfoBar = ({ username }) => { 
+const InfoBar = () => { 
     const navigate = useNavigate(); 
   
     const handleLogoClick = () => {
@@ -13,6 +13,11 @@ const InfoBar = ({ username }) => {
     const handleUsernameClick = () => {
       navigate("/profile"); 
     };
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const username = queryParams.get("username") || "User";
+
   
     return (
       <Container>
@@ -25,6 +30,6 @@ const InfoBar = ({ username }) => {
         />
       </Container>
     );
-  };
-  
-  export default InfoBar;
+};
+
+export default InfoBar;
